@@ -33,4 +33,4 @@ RMSE = sqrt((1/N)*E)
 
 plot(xn, gxn);
 
-roots([a, b, c-0.600])
+roots([a, b, c-0.5995])

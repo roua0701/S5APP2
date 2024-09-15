@@ -16,7 +16,7 @@ x=0:dx:25;
 gx=A(1,1) + A(2,1)*x + A(3,1)*x.^2 + A(4,1)*x.^3 + A(5,1)*x.^4;
 
 figure;
-produire_courbe(x, gx, "Position horizontale (x)", "Position verticale (y)", "Trajectoire");
+produire_courbe(x, gx, "Position horizontale (m)", "Position verticale (m)", "Trajectoire");
 
 for i = 1:length(A)
     %disp(A(i)*10000);
@@ -34,4 +34,11 @@ mu = (mu1 + mu2) / 2
 vx = sqrt(2 * g * (30 - gx - mu * x));
 
 figure;
-plot(x, vx);
+produire_courbe(x, vx, "Position horizontale (m)", "Vitesse (m/s)", "Vitesse selon la position");
+
+vx(end)
+
+% erreur rms sur la vitesse
+vx1 = sqrt(2 * g * (30 - gx - mu1 * x));
+vx2 = sqrt(2 * g * (30 - gx - mu2 * x));
+(vx2(end) - vx1(end)) / 2
