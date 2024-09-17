@@ -2,6 +2,8 @@ xn = [0 10 20 30 40 50 60 70 80 90 100];
 yn = [0.87 0.78 0.71 0.61 0.62 0.51 0.51 0.49 0.46 0.48 0.46];
 N = 11;
 
+coeff = 0.6296; % coefficient choisi
+
 figure;
 scatter(xn, yn);
 title("Coefficient de friction dynamique en fonction de l'ouverture de la valve");
@@ -33,4 +35,4 @@ RMSE = sqrt((1/N)*E)
 
 plot(xn, gxn);
 
-roots([a, b, c-0.5995])
+roots([a, b, c-coeff])
